@@ -13,6 +13,8 @@ gem "rubocop", "~> 0.54.0", require: false
 gem "coffee-rails", "~> 4.2"
 gem "turbolinks", "~> 5"
 gem "jbuilder", "~> 2.5"
+gem "bcrypt", "~> 3.1.12"
+gem "config", "~> 1.7"
 
 source "https://rubygems.org"
 gem "bootstrap-sass", "3.3.7"

@@ -231,7 +231,7 @@ Layout/IndentationConsistency:
 
 Layout/IndentationWidth:
   Description: "Use 2 spaces for indentation."
-  Enabled: false
+  Enabled: true
 
 Layout/IndentArray:
   Description: >-

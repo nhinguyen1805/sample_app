@@ -46,3 +46,9 @@ en:
       log_in: "Log in"
   users:
     signup: "Sign up"
+  shared:
+    error_messages:
+      the_form_contains: "The form contains"
+      error_count:
+        one: "1 error"
+        other: "%{count} errors"
