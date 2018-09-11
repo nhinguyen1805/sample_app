@@ -48,6 +48,7 @@ en:
       profile: "Profile"
       settings: "Settings"
       log_out: "Log out"
+      user: "Users"
   users:
     new:
       signup: "Sign up"
@@ -55,6 +56,17 @@ en:
       create: "Create my account"
     show:
       user_not_found: "User not found"
+    edit:
+      title: "Edit user"
+      h1: "Update your profile"
+      shared/error: "shared/error_messages"
+      submit: "Save changes"
+      changes: "Changes"
+      link_change: "http://gravatar.com/emails"
+    index:
+      title: "All users"
+    user:
+      confirm: "Are you sure?"
   sessions:
     new:
       title: "Log In"
@@ -69,3 +81,11 @@ en:
       error_count:
         one: "1 error"
         other: "%{count} errors"
+  controllers:
+    users:
+      update: "Profile updated"
+      danger: "Please log in."
+      welcome: "Welcome to the Sample App"
+      delete: "User deleted"
+      no_user: "Can not found user"
+      destroy: "Can not delete. By the way I don't know the reason ^^"

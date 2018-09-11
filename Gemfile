@@ -15,7 +15,10 @@ gem "turbolinks", "~> 5"
 gem "jbuilder", "~> 2.5"
 gem "bcrypt", "~> 3.1.12"
 gem "config"
-gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
+gem "jquery-rails", "~> 4.3", ">= 4.3.3"
+gem "faker", "~> 1.7.3"
+gem "will_paginate", "~> 3.1.6"
+gem "bootstrap-will_paginate", "~> 1.0.0"
 
 source "https://rubygems.org"
 gem "bootstrap-sass", "3.3.7"
