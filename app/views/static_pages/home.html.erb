@@ -1,9 +1,7 @@
-
-<% provide:title, (t ".title") %>
-
-<h1>sample_app</h1>
-<p>
-	This is the home page for the
-	<%= link_to (t ".link_name"), (t ".link") %> sample application.
+<% provide:title, t(".title") %>
+<h1><%= link_to t(".title") %></h1>
+<p>This is the home page for the <%= link_to t(".link_name"), t(".link") %>
+   sample application.
+>>>>>>> Chapter 4 - Rails-flavored Ruby
 </p>
 

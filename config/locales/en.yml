@@ -56,4 +56,15 @@ en:
     contact:
       title: "contact"
       link: "http://www.railstutorial.org/contact"
+      link_name: "contact page"
 
+  layouts:
+    footer:
+      link: "http://www.railstutorial.org/"
+      name: "Ruby on Rails Tutorial"
+      link2: "http://www.michaelhartl.com/"
+      author_name: "Michael Hartl"
+      about: "About"
+      contact: "Contact"
+      link_news: "http://news.railstutorial.org/"
+      news: "News"
