@@ -44,14 +44,27 @@ en:
       home: "Home"
       help: "Help"
       log_in: "Log in"
+      account: "Account"
+      profile: "Profile"
+      settings: "Settings"
+      log_out: "Log out"
   users:
     new:
       signup: "Sign up"
       confirmation: "Confirmation"
       create: "Create my account"
-    user_not_found: "User not found"
+    show:
+      user_not_found: "User not found"
+  sessions:
+    new:
+      title: "Log In"
+      signup: "Sign up now!"
+      newuser: "New User ?"
+      login: "Log in"
+      invalid: "Invalid email/password combination"
   shared:
-    the_form_contains: "The form contains "
-    error_count:
+    error_messages:
+      the_form_contains: "The form contains"
+      error_count:
         one: "1 error"
         other: "%{count} errors"

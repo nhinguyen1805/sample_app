@@ -1,13 +1,6 @@
-<<<<<<< f17df8f8340e3aa3460c4279d0185246b34fdf60
-require 'test_helper'
-
-class UserTest < ActiveSupport::TestCase
-
-=======
 require "test_helper"
-
 class UserTest < ActiveSupport::TestCase
->>>>>>> Chapter 7 - Sign Up
+
   def setup
     @user = User.new(name: "Example User",
       email: "user@example.com", password: "foobar",
