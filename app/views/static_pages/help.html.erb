@@ -1,10 +1,9 @@
-
-<% provide:title, (t ".title") %>
-
-<h1>help</h1>
+<% provide :title, t(".title") %>
+<h1><%= link_to t(".title") %></h1>
 <p>
-	Get help on the Ruby on Rails Tutorial at the <%= link_to (t ".link_name1"), (t ".link1") %>
-	To get help on this sample app, see the <%= link_to (t ".link_name2"), (t ".link2") %>
-	book.
+  Get help on the Ruby on Rails Tutorial at the
+  <%= link_to t(".link_name1"), t(".link1") %> To get help on this
+  sample app, see the <%= link_to t(".link_name2"), t(".link2") %> book.
 </p>
+
 
