@@ -75,6 +75,8 @@ en:
       login: "Log in"
       invalid: "Invalid email/password combination"
       remember: "Remember me on this computer"
+      message1: "Account not activated. "
+      message2: "Check your email for the activation link."
   shared:
     error_messages:
       the_form_contains: "The form contains"
@@ -89,3 +91,18 @@ en:
       delete: "User deleted"
       no_user: "Can not found user"
       destroy: "Can not delete. By the way I don't know the reason ^^"
+      check: "Please check your email to activate your account."
+      destroy: "Can not delete. By the way I don't know the reason ^^"
+    account:
+      activated: "Account activated!"
+      invalid: "Invalid activation link"
+  user_mailer:
+    subject1: "Account activation"
+    subject2: "to@example.org"
+    account_activation:
+      title: "Sample App"
+      hi: "Dear"
+      text: "Welcome to the Sample App!
+        Click on the link below to activate your account:"
+      activate: "Activate"
+    password_reset:
