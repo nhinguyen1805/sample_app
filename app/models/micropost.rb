@@ -1,13 +1,14 @@
 class Micropost < ApplicationRecord
   belongs_to :user
-  default_scope -> { order(created_at: :desc) }
+  default_scope ->{order(created_at: :desc)}
   mount_uploader :picture, PictureUploader
   validates :user_id, presence: true
   validates :content, presence: true,
-    length: { maximum: Settings.micropost.content_size}
-   validate  :picture_size
+    length: {maximum: Settings.micropost.content_size}
+  validate :picture_size
 
-private
+  private
+
   def picture_size
     if picture.size > 5.megabytes
       errors.add(:picture, t("microposts.picture_size"))

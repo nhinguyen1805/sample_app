@@ -4,28 +4,15 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <%= form_for(@user, url: password_reset_path(params[:id])) do |f| %>
-<<<<<<< dd06f1fc7a8a7f88ce316ebbff25e78ba63dea2a
-      <%= render t("password_resets.edit.message") %>
-=======
-      <%= render "shared/error_messages", object: f.object %>
->>>>>>> Chapter 13: - User microposts
+      <%= render t("password_resets.edit.message"), object: f.object %>
 
       <%= hidden_field_tag :email, @user.email %>
 
       <%= f.label :password %>
-<<<<<<< dd06f1fc7a8a7f88ce316ebbff25e78ba63dea2a
-      <%= f.password_field :password, class: 'form-control' %>
-
-      <%= f.label :password_confirmation, t(".confirm") %>
-      <%= f.password_field :password_confirmation, class: 'form-control' %>
-=======
       <%= f.password_field :password, class: "form-control" %>
 
       <%= f.label :password_confirmation, t(".confirm") %>
-      <%= f.password_field :password_confirmation,
-      class: "form-control" %>
->>>>>>> Chapter 13: - User microposts
-
+      <%= f.password_field :password_confirmation, class: "form-control" %>
       <%= f.submit t(".update"), class: "btn btn-primary" %>
     <% end %>
   </div>

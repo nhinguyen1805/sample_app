@@ -1,7 +1,6 @@
 require "test_helper"
 
 class MicropostsInterfaceTest < ActionDispatch::IntegrationTest
-
   def setup
     @user = users(:michael)
   end
@@ -16,7 +15,7 @@ class MicropostsInterfaceTest < ActionDispatch::IntegrationTest
     assert_select "div#error_explanation"
     content = "This micropost really ties the room together"
     assert_difference "Micropost.count", 1 do
-      post microposts_path, params: { micropost: { content: content } }
+      post microposts_path, params: {micropost: {content: content}}
     end
     assert_redirected_to root_url
     follow_redirect!

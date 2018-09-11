@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+
   before_action :load_user, only: [:show, :edit, :update]
   before_action :logged_in_user, except: [:new, :create]
   before_action :correct_user, only: [:edit, :update]
@@ -10,10 +11,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find_by id: params[:id]
-    return if @user.present?
-      flash[:danger] = t ".user_not_found"
-      redirect_to signup_path
+    @microposts = @user.microposts.paginate(page: params[:page])
   end
 
   def new
@@ -44,8 +42,9 @@ class UsersController < ApplicationController
   end
 
   def destroy
+   @user = User.find_by id: params[:id]
     if @user.destroy
-      flash[:success] = t ".delete"
+      flash[:success] = t "controllers.users.delete"
       redirect_to users_url
     else
       flash[:danger] = t "controllers.users.destroy"
@@ -53,10 +52,18 @@ class UsersController < ApplicationController
     end
   end
 
-  def destroy
-    User.find(params[:id]).destroy
-      flash[:success] = t("controllers.users.delete")
-      redirect_to users_url
+  def following
+    @title = "Following"
+    @user  = User.find(params[:id])
+    @users = @user.following.paginate(page: params[:page])
+    render :show_follow
+  end
+
+  def followers
+    @title = "Followers"
+    @user  = User.find(params[:id])
+    @users = @user.followers.paginate(page: params[:page])
+    render :show_follow
   end
 
   private
