@@ -5,3 +5,5 @@ user:
     max_size: 255
   password:
     min_size: 6
+users_helper:
+  gravatar_size: 80
