@@ -16,4 +16,10 @@ session_controller:
 models:
   user:
     password_reset: 2
+micropost:
+  content_size: 140
+  micropost_user: 50
+shared:
+  user_info:
+    size: 50
 
