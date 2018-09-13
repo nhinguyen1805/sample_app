@@ -231,7 +231,7 @@ Layout/IndentationConsistency:
 
 Layout/IndentationWidth:
   Description: "Use 2 spaces for indentation."
-  Enabled: true
+  Enabled: false
 
 Layout/IndentArray:
   Description: >-
@@ -509,7 +509,7 @@ Style/StringLiterals:
 
 Layout/Tab:
   Description: "No hard tabs."
-  Enabled: true
+  Enabled: false
 
 Layout/TrailingBlankLines:
   Description: "Checks trailing blank lines and final newline."
