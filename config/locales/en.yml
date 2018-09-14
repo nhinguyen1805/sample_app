@@ -1,42 +1,14 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
   hello: "Hello world"
+  base_title: "Ruby on Rails Tutorial Sample App"
   header: "| Ruby on Rails Tutorial Sample App"
   static_pages:
     home:
       title: "Home"
+      welcome: "Welcome to the Sample App"
       link: "http://www.railstutorial.org/"
       link_name: "Ruby on Rails Tutorial"
+      signup: "Sign up now!"
     about:
       title: "About"
       link1: "http://www.railstutorial.org/"
@@ -54,6 +26,23 @@ en:
       link2: "http://www.railstutorial.org/book"
       link_name2: "Ruby on Rails Tutorial"
     contact:
-      title: "contact"
-      link: "http://www.railstutorial.org/contact"
-
+      title: "Contact"
+      link_contact: "http://www.railstutorial.org/contact"
+      link_name: "contact page"
+  layouts:
+    footer:
+      link: "http://www.railstutorial.org/"
+      name: "Ruby on Rails Tutorial"
+      link2: "http://www.michaelhartl.com/"
+      author_name: "Michael Hartl"
+      about: "About"
+      contact: "Contact"
+      link_news: "http://news.railstutorial.org/"
+      news: "News"
+    header:
+      sample_app: "Sample App"
+      home: "Home"
+      help: "Help"
+      log_in: "Log in"
+  users:
+    signup: "Sign up"
