@@ -1,9 +1,18 @@
 class UsersController < ApplicationController
+  before_action :logged_in_user, except: [:new, :create]
+  before_action :load_user, except: [:new, :create]
+  before_action :correct_user, only: [:edit, :update]
+  before_action :admin_user, only: :destroy
+
+  def index
+    @users = User.paginate page: params[:page],
+      :per_page => Settings.users.index.per_page
+  end
+
   def show
-    @user = User.find_by(id: params[:id])
     return if @user.present?
-    flash[:danger] = t(".user_not_found")
-    redirect_to signup_path
+      flash[:danger] = t ".user_not_found"
+      redirect_to signup_path
   end
 
   def new
@@ -14,10 +23,31 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       log_in @user
-      flash[:success] = t("static_pages.home.welcome")
+      flash[:success] = t "controllers.users.welcome"
       redirect_to @user
     else
-      render "new"
+      render :new
+    end
+  end
+
+  def edit; end
+
+  def update
+    if @user.update_attributes(user_params)
+      flash[:success] = t "controllers.users.update"
+      redirect_to @user
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    if @user.destroy
+      flash[:success] = t ".delete"
+      redirect_to users_url
+    else
+      flash[:danger] = t "controllers.users.destroy"
+      redirect_to @user
     end
   end
 
@@ -26,5 +56,33 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit :name, :email, :password,
       :password_confirmation
+  end
+
+  def logged_in_user
+    unless logged_in?
+      store_location
+      flash[:danger] = t "controllers.users.danger"
+      redirect_to login_url
+    end
+  end
+
+  def load_user
+    @user = User.find_by id: params[:id]
+    return if @user
+      redirect_to signup_path
+      flash[:info] = t " controllers.users.no_user"
+  end
+
+  def correct_user
+    load_user
+    if current_user?(@user)
+      redirect_to(root_url)
+    else
+      render :new
+    end
+  end
+
+  def admin_user
+    redirect_to(root_url) unless current_user.admin?
   end
 end
