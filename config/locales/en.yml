@@ -84,6 +84,12 @@ en:
       error_count:
         one: "1 error"
         other: "%{count} errors"
+    user_info:
+      view: "view my profile"
+      micropost: "micropost"
+    micropost_form:
+      placeholder: "Compose new micropost..."
+      post: "Post"
   controllers:
     users:
       title: "Sign Up"
@@ -98,6 +104,8 @@ en:
       check: "Please check your email to activate your account."
       destroy: "Can not delete. By the way I don't know the reason ^^"
       no_user: "User not found"
+      check: "Please check your email to activate your account."
+      danger2: "No such user"
     password_resets:
       info: "Email sent with password reset instructions"
       danger: "Email address not found"
@@ -106,6 +114,10 @@ en:
       expire: "Password reset has expired."
     account:
       activated: "Account activated!"
+      invalid: "Invalid activation link"
+    application:
+      login: "Please log in."
+      activate: "Account activated!"
       invalid: "Invalid activation link"
   user_mailer:
     subject1: "Account activation"
@@ -132,4 +144,14 @@ en:
       message: "shared/error_messages"
       confirm: "Confirmation"
       update: "Update password"
-
+  microposts:
+    orange: "I just ate an orange!"
+    tau_manifesto: "Check out the @tauday site by @mhartl: http://tauday.com"
+    cat_video: "Sad cats are sad: http://youtu.be/PKffm2uI4dk"
+    most_recent: "Writing a short test"
+    confirm: "You sure?"
+    success: "Micropost created!"
+    destroy: "Micropost deleted"
+    picture_size: "should be less than 5MB"
+    picture_accept: "image/jpeg,image/gif,image/png"
+    danger: "You can not delete. Don't ask me why. Coz I don't know"
