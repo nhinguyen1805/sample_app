@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = User.find_by id: params[:id]
     return if @user.present?
       flash[:danger] = t ".user_not_found"
       redirect_to signup_path
@@ -33,7 +34,7 @@ class UsersController < ApplicationController
   def edit; end
 
   def update
-    @user = User.find(params[:id])
+    @user = User.find params[:id]
     if @user.update_attributes(user_params)
       flash[:success] = t "controllers.users.update"
       redirect_to @user
@@ -59,6 +60,13 @@ class UsersController < ApplicationController
       :password_confirmation
   end
 
+  def load_user
+    @user = User.find_by id: params[:id]
+    return if @user
+      redirect_to signup_path
+      flash[:info] = t "controllers.users.no_user"
+  end
+
   def logged_in_user
     unless logged_in?
       store_location
@@ -67,15 +75,8 @@ class UsersController < ApplicationController
     end
   end
 
-  def load_user
-    @user = User.find_by id: params[:id]
-    return if @user
-      redirect_to signup_path
-      flash[:info] = t " controllers.users.no_user"
-  end
-
   def correct_user
-    @user = User.find_by(id: params[:id])
+    @user = User.find_by id: params[:id]
     if current_user?(@user)
       redirect_to(root_url)
     else
