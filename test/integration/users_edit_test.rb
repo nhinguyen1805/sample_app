@@ -17,7 +17,6 @@ class UsersEditTest < ActionDispatch::IntegrationTest
 
   test "successful edit with friendly forwarding" do
     log_in_as(@user)
-    debugger
     get edit_user_path(@user)
     name = "Foo Bar"
     email = "foo@bar.com"

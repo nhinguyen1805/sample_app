@@ -1,0 +1,7 @@
+<% provide :title, t(".title") %>
+<h1><%= t("user_mailer.account_activation.title") %></h1>
+<p><%= t(".hi") %> <%= @user.name %>,</p>
+<p><%= t(".text") %></p>
+<%= link_to t(".activate"), edit_account_activation_url(@user.activation_token,
+  email: @user.email) %>
+
